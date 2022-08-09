@@ -15,10 +15,14 @@
                 {{#each products}}
                     <tr>
                         <td>{{title}}</td>
-                        <td>{{price}}</td>                          
-                        <td>
-                            <img src="{{thumbnail}}" width="50em" height="50em">
-                        </td>                          
+                        <td>{{price}}</td>  
+                          {{#if (includeImg thumbnail) }}
+                                <td>
+                                    <img src="{{thumbnail}}" width="50em" height="50em">
+                                </td>
+                            {{else}} 
+                               <td>{{thumbnail}}</td>
+                            {{/if}}                                                                   
                     </tr>
                 {{/each}}
             </tbody>

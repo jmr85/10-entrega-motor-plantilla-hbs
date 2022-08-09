@@ -7,6 +7,21 @@ let contenedor = new Contenedor('data/productos.txt');
 
 const app = express();
 
+const hbs = handlebars.create({});
+
+/*
+Se registra nuevo helper para preguntar si 
+si el campo Foto URL tiene de tipo extension
+una imagen para usarlo en productos.hbs
+SI tiene imagen muestra con <img> SI NO muestra solo el texto
+*/
+hbs.handlebars.registerHelper('includeImg', function(array) {   
+    return array.includes(".png")  
+    || array.includes(".jpg") 
+    || array.includes(".gif") 
+    || array.includes(".webp")
+})
+
 app.engine(
     'hbs', 
     handlebars.engine({
