@@ -1,0 +1,17 @@
+<section>
+    <form action="/productos" method="post">
+        <div class="mb-3">
+          <label for="inputName" class="form-label"><strong>Nombre</strong></label>
+          <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="mb-3">
+          <label for="inputPrice" class="form-label"><strong>Precio</strong></label>
+          <input type="number" name="price" class="form-control" id="price" required>
+        </div>
+        <div class="mb-3">
+            <label for="inputFoto" class="form-label"><strong>Foto URL</strong></label>
+            <input type="text" name="photo" class="form-control" id="photo" required>
+          </div>
+        <button type="submit" class="btn btn-success btn-lg">Enviar</button>
+      </form>
+</section>
